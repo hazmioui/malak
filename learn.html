@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Desktop/style.css">
+    <title>Samer MSG</title>
+    <style>
+        .morph{
+    background-color: black;
+    color: white;
+    font: 4rem "Exo 2";
+    position: relative;
+    height: 10rem;
+    filter: contrast(25) blur(1px);
+
+}
+.morph>div{
+    animation: show 14s infinite ease-in-out;
+    animation-delay: calc(var(--i) * 2 - 14s);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+}
+@keyframes show {
+    0%, 5%, 100% {filter: blur(0px);opacity: 1;}
+    20%, 80% {
+        filter: blur(1rem);
+        opacity: 0;
+    }
+}
+    </style>
+</head>
+<body>
+    <!--
+    <input type="password" id="psw">
+    <input type="checkbox" name="" id="chk">Show password
+
+    <br>-------------------------------------------------------------- <br>
+
+    <div id="saat">00:00:00</div>-->
+
+    <div class="morph">
+        <div style="--i:1s">Malak</div>
+        <div style="--i:2s">brit</div>
+        <div style="--i:3s">ngolek</div>
+        <div style="--i:4s">kanbriik ♥</div>
+        <div style="--i:5s">ar3ma</div>
+        <div style="--i:6s">inoo ♥</div>
+    </div>
+
+
+
+
+
+    <script>
+         /*-----  show pswrd
+
+        const psw = document.getElementById("psw");
+        const chk = document.getElementById("chk");
+
+        chk.onchange = function(e) {
+            psw.type = chk.checked ? "text" : "password";
+        };
+
+       ------*/
+        setInterval(() =>
+        document.getElementById("saat")
+        .textContent = new Date()
+        .toLocaleTimeString("ma")
+        , 1000 );
+
+    </script>
+</body>
+</html>
